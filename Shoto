@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>April Fool's Prank</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: red;
+            position: relative;
+            overflow: hidden;
+            transition: background 1s;
+        }
+        #message {
+            font-size: 2em;
+            color: white;
+            padding: 20px 40px;
+            background: white;
+            color: red;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: opacity 1s;
+            z-index: 10;
+        }
+        #click-me {
+            font-size: 1.5em;
+            color: white;
+            margin-top: 10px;
+            z-index: 10;
+        }
+        #hidden-message {
+            font-size: 2em;
+            color: red;
+            opacity: 0;
+            transition: opacity 1s;
+            display: none;
+            z-index: 10;
+        }
+        #prank-message {
+            font-size: 2em;
+            color: red;
+            opacity: 0;
+            transition: opacity 1s;
+            display: none;
+            z-index: 10;
+            margin-top: 10px;
+        }
+        .falling-heart, .falling-emoji {
+            position: absolute;
+            font-size: 2em;
+            animation: fall 5s infinite linear;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        .laughing-background {
+            background-color: yellow !important;
+        }
+    </style>
+    <script>
+        function createFallingElement(symbol, className) {
+            let element = document.createElement('div');
+            element.classList.add(className);
+            element.innerHTML = symbol;
+            element.style.left = Math.random() * 100 + 'vw';
+            element.style.top = '-10vh';
+            element.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            document.body.appendChild(element);
+            setTimeout(() => element.remove(), 5000);
+        }
+        
+        function startFallingHearts() {
+            setInterval(() => createFallingElement('❤️', 'falling-heart'), 500);
+        }
+        
+        function prank() {
+            document.body.classList.add('laughing-background');
+            let message = document.getElementById('message');
+            let clickMe = document.getElementById('click-me');
+            message.style.opacity = '0';
+            clickMe.style.opacity = '0';
+            setTimeout(() => {
+                message.style.display = 'none';
+                clickMe.style.display = 'none';
+            }, 1000);
+            document.getElementById('hidden-message').style.display = 'block';
+            setTimeout(() => document.getElementById('hidden-message').style.opacity = '1', 100);
+            document.getElementById('prank-message').style.display = 'block';
+            setTimeout(() => document.getElementById('prank-message').style.opacity = '1', 1000);
+            
+            for (let i = 0; i < 20; i++) {
+                createFallingElement('😂', 'falling-emoji');
+            }
+        }
+        
+        window.onload = startFallingHearts;
+    </script>
+</head>
+<body>
+    <div id="message" onclick="prank()">💖 I love you 💖</div>
+    <div id="click-me">Click me</div>
+    <div id="hidden-message">April Fool's! 😂</div>
+    <div id="prank-message">It's a prank! 🤣</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>April Fool's Prank</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: red;
+            position: relative;
+            overflow: hidden;
+            transition: background 1s;
+        }
+        #message {
+            font-size: 2em;
+            color: white;
+            padding: 20px 40px;
+            background: white;
+            color: red;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: opacity 1s;
+            z-index: 10;
+        }
+        #click-me {
+            font-size: 1.5em;
+            color: white;
+            margin-top: 10px;
+            z-index: 10;
+        }
+        #hidden-message {
+            font-size: 2em;
+            color: red;
+            opacity: 0;
+            transition: opacity 1s;
+            display: none;
+            z-index: 10;
+        }
+        #prank-message {
+            font-size: 2em;
+            color: red;
+            opacity: 0;
+            transition: opacity 1s;
+            display: none;
+            z-index: 10;
+            margin-top: 10px;
+        }
+        .falling-heart, .falling-emoji {
+            position: absolute;
+            font-size: 2em;
+            animation: fall 5s infinite linear;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        .laughing-background {
+            background-color: yellow !important;
+        }
+    </style>
+    <script>
+        function createFallingElement(symbol, className) {
+            let element = document.createElement('div');
+            element.classList.add(className);
+            element.innerHTML = symbol;
+            element.style.left = Math.random() * 100 + 'vw';
+            element.style.top = '-10vh';
+            element.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            document.body.appendChild(element);
+            setTimeout(() => element.remove(), 5000);
+        }
+        
+        function startFallingHearts() {
+            setInterval(() => createFallingElement('❤️', 'falling-heart'), 500);
+        }
+        
+        function prank() {
+            document.body.classList.add('laughing-background');
+            let message = document.getElementById('message');
+            let clickMe = document.getElementById('click-me');
+            message.style.opacity = '0';
+            clickMe.style.opacity = '0';
+            setTimeout(() => {
+                message.style.display = 'none';
+                clickMe.style.display = 'none';
+            }, 1000);
+            document.getElementById('hidden-message').style.display = 'block';
+            setTimeout(() => document.getElementById('hidden-message').style.opacity = '1', 100);
+            document.getElementById('prank-message').style.display = 'block';
+            setTimeout(() => document.getElementById('prank-message').style.opacity = '1', 1000);
+            
+            for (let i = 0; i < 20; i++) {
+                createFallingElement('😂', 'falling-emoji');
+            }
+        }
+        
+        window.onload = startFallingHearts;
+    </script>
+</head>
+<body>
+    <div id="message" onclick="prank()">💖 I love you 💖</div>
+    <div id="click-me">Click me</div>
+    <div id="hidden-message">April Fool's! 😂</div>
+    <div id="prank-message">It's a prank! 🤣</div>
+</body>
+</html>
